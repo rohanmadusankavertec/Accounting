@@ -116,10 +116,8 @@ public class ReportDAOImpl {
                     List<Transaction> tList = query1.list();
 
                     for (Transaction transaction : tList) {
-                        System.out.println("CHECK >>>" + transaction.getDebit().getSubtypeId().getTypeId().getName() + "   " + transaction.getCredit().getSubtypeId().getTypeId().getName());
-
+                        
                         if (!transaction.getDebit().getSubtypeId().getTypeId().getName().equals("Capital") && !transaction.getCredit().getSubtypeId().getTypeId().getName().equals("Capital")) {
-                            System.out.println("NO >>>" + transaction.getDebit().getSubtypeId().getTypeId().getName());
                             boolean bool = true;
                             for (String[] st : starr) {
                                 if (st[0].equals(transaction.getId() + "")) {
@@ -144,8 +142,7 @@ public class ReportDAOImpl {
                     query1.setParameter("id", Integer.parseInt(st[0]));
                     Transaction t1 = (Transaction) query1.uniqueResult();
 
-                    System.out.println(">>>>>" + t1.getDescription() + "----" + t1.getDebit().getSubtypeId().getName() + "----" + t1.getCredit().getSubtypeId().getName());
-
+                    
                     if ((t1.getDebit().getSubtypeId().getName().equals("Cash") | t1.getDebit().getSubtypeId().getName().equals("Bank")) & (t1.getCredit().getSubtypeId().getName().equals("Cash") | t1.getCredit().getSubtypeId().getName().equals("Bank"))) {
                         dbool = true;
                         cbool = true;
@@ -154,7 +151,6 @@ public class ReportDAOImpl {
                         cbool = true;
                         if (t1.getDebit().getSubtypeId().getName().equals("Creditors") | t1.getDebit().getSubtypeId().getName().equals("Debtors")) {
                             cbool = false;
-                            System.out.println("Ignored<<<<<<<<<<<<<<<<<<<<<<<");
                         }
 
                     } else if ((t1.getDebit().getSubtypeId().getName().equals("Cash") | t1.getDebit().getSubtypeId().getName().equals("Bank")) & (!t1.getCredit().getSubtypeId().getName().equals("Cash") | !t1.getCredit().getSubtypeId().getName().equals("Bank"))) {
@@ -163,7 +159,6 @@ public class ReportDAOImpl {
 
                         if (t1.getCredit().getSubtypeId().getName().equals("Creditors") | t1.getCredit().getSubtypeId().getName().equals("Debtors")) {
                             dbool = false;
-                            System.out.println("Ignored<<<<<<<<<<<<<<<<<<<<<<<");
                         }
                     } else if ((!t1.getDebit().getSubtypeId().getName().equals("Cash") | !t1.getDebit().getSubtypeId().getName().equals("Bank")) & (!t1.getCredit().getSubtypeId().getName().equals("Cash") | !t1.getCredit().getSubtypeId().getName().equals("Bank"))) {
                         dbool = false;
