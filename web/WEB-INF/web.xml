@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>com.vertec.controller.LoginController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserController</servlet-name>
+        <servlet-class>com.vertec.controller.UserController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutController</servlet-name>
+        <servlet-class>com.vertec.controller.LogoutController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PrivilegeController</servlet-name>
+        <servlet-class>com.vertec.controller.PrivilegeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PurchaseController</servlet-name>
+        <servlet-class>com.vertec.controller.PurchaseController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SellController</servlet-name>
+        <servlet-class>com.vertec.controller.SellController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TransactionController</servlet-name>
+        <servlet-class>com.vertec.controller.TransactionController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignupController</servlet-name>
+        <servlet-class>com.vertec.controller.SignupController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AccountController</servlet-name>
+        <servlet-class>com.vertec.controller.AccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IncomeController</servlet-name>
+        <servlet-class>com.vertec.controller.IncomeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExpenseController</servlet-name>
+        <servlet-class>com.vertec.controller.ExpenseController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LiabilitiesController</servlet-name>
+        <servlet-class>com.vertec.controller.LiabilitiesController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AssetLoanController</servlet-name>
+        <servlet-class>com.vertec.controller.AssetLoanController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InvestmentController</servlet-name>
+        <servlet-class>com.vertec.controller.InvestmentController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DrawingController</servlet-name>
+        <servlet-class>com.vertec.controller.DrawingController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FixedAssetController</servlet-name>
+        <servlet-class>com.vertec.controller.FixedAssetController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FinanceTransferController</servlet-name>
+        <servlet-class>com.vertec.controller.FinanceTransferController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportController</servlet-name>
+        <servlet-class>com.vertec.controller.ReportController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoanPayController</servlet-name>
+        <servlet-class>com.vertec.controller.LoanPayController</servlet-class>
+    </servlet>
+    
+    
+    
+    
+    
+    <servlet-mapping>
+        <servlet-name>LoanPayController</servlet-name>
+        <url-pattern>/LoanPay</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportController</servlet-name>
+        <url-pattern>/Report</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FinanceTransferController</servlet-name>
+        <url-pattern>/FinanceTransfer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FixedAssetController</servlet-name>
+        <url-pattern>/FixedAsset</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InvestmentController</servlet-name>
+        <url-pattern>/Investment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DrawingController</servlet-name>
+        <url-pattern>/Drawing</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AssetLoanController</servlet-name>
+        <url-pattern>/AssetLoan</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LiabilitiesController</servlet-name>
+        <url-pattern>/Liability</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountController</servlet-name>
+        <url-pattern>/Account</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IncomeController</servlet-name>
+        <url-pattern>/Income</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExpenseController</servlet-name>
+        <url-pattern>/Expense</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignupController</servlet-name>
+        <url-pattern>/Signup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PurchaseController</servlet-name>
+        <url-pattern>/Purchase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SellController</servlet-name>
+        <url-pattern>/Sell</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TransactionController</servlet-name>
+        <url-pattern>/Transaction</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>/User</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutController</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PrivilegeController</servlet-name>
+        <url-pattern>/Privilege</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <session-config>
+        <session-timeout>
+            300
+        </session-timeout>
+    </session-config>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error500.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error403.jsp</location>
+    </error-page>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
