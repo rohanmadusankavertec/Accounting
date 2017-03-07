@@ -171,7 +171,7 @@ public class ReportController extends HttpServlet {
                         request.setAttribute("date", new Date());
                         request.setAttribute("from", fdate);
                         request.setAttribute("to", todate);
-                        requestDispatcher = request.getRequestDispatcher("/app/reports/ReportProfitLoss.jsp");
+                        requestDispatcher = request.getRequestDispatcher("/app/reports/ReportIncomeStatement.jsp");
                         requestDispatcher.forward(request, response);
                     } catch (ParseException ex) {
                         Logger.getLogger(ReportController.class.getName()).log(Level.SEVERE, null, ex);

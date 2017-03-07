@@ -39,7 +39,7 @@
     </head>
     <body onload="window.print()">
     <center>
-        <h1>Profit And Loss</h1>
+        <h1>Income Statement</h1>
         <p>Calculated Date: <%=date%></p>
         <h4 style="margin-top: -10px;">Calculated From <%=from%> To <%=to%></h4>
         <table style="width: 90%"  class="table" border="1">
@@ -53,24 +53,24 @@
             <tbody>
 
 
-
-
-
-
                 <%
                     Double debit = 0.0;
                     Double credit = 0.0;
+                    
+                    Double tdebit = 0.0;
+                    Double tcredit = 0.0;
+                    
                     for (String[] a : arr) {
                 %>
                 <%if (a[2].equals("Purchase")) {%>
                 <%
                     if (Double.parseDouble(a[1]) < 0) {
-                        credit += ((-1) * Double.parseDouble(a[1]));
+                        tcredit += ((-1) * Double.parseDouble(a[1]));
                 %>
 
                 <%
                 } else {
-                    debit += Double.parseDouble(a[1]);
+                    tdebit += Double.parseDouble(a[1]);
                 %>
 
                 <%
@@ -82,8 +82,8 @@
                 <tr>
                     <td><span style="margin-left: 20px;">Purchasing</span></td>
                     <%
-
-                        Double tot = debit - credit;
+                        
+                        Double tot = tdebit - tcredit;
                         if (tot < 0) {
                     %>
                     <td></td>
@@ -104,19 +104,21 @@
 
 
                 <%
-                    debit = 0.0;
-                    credit = 0.0;
+                    credit+=tcredit;
+                    debit+=tdebit;
+                    tdebit = 0.0;
+                    tcredit = 0.0;
                     for (String[] a : arr) {
                 %>
                 <%if (a[2].equals("Sell")) {%>
                 <%
                     if (Double.parseDouble(a[1]) < 0) {
-                        credit += ((-1) * Double.parseDouble(a[1]));
+                        tcredit += ((-1) * Double.parseDouble(a[1]));
                 %>
 
                 <%
                 } else {
-                    debit += Double.parseDouble(a[1]);
+                    tdebit += Double.parseDouble(a[1]);
                 %>
 
                 <%
@@ -128,7 +130,7 @@
                 <tr>
                     <td><span style="margin-left: 20px;">Sales</span></td>
                     <%
-                        tot = debit - credit;
+                        tot = tdebit - tcredit;
                         if (tot < 0) {
                     %>
                     <td></td>
@@ -147,19 +149,21 @@
 
 
                 <%
-                    debit = 0.0;
-                    credit = 0.0;
+                    credit+=tcredit;
+                    debit+=tdebit;
+                    tdebit = 0.0;
+                    tcredit = 0.0;
                     for (String[] a : arr) {
                 %>
                 <%if (a[2].equals("Income")) {%>
                 <%
                     if (Double.parseDouble(a[1]) < 0) {
-                        credit += ((-1) * Double.parseDouble(a[1]));
+                        tcredit += ((-1) * Double.parseDouble(a[1]));
                 %>
 
                 <%
                 } else {
-                    debit += Double.parseDouble(a[1]);
+                    tdebit += Double.parseDouble(a[1]);
                 %>
 
                 <%
@@ -171,7 +175,7 @@
                 <tr>
                     <td><span style="margin-left: 20px;">Other Income</span></td>
                     <%
-                        tot = debit - credit;
+                        tot = tdebit - tcredit;
                         if (tot < 0) {
                     %>
                     <td></td>
@@ -189,19 +193,21 @@
 
 
                 <%
-                    debit = 0.0;
-                    credit = 0.0;
+                    credit+=tcredit;
+                    debit+=tdebit;
+                    tdebit = 0.0;
+                    tcredit = 0.0;
                     for (String[] a : arr) {
                 %>
                 <%if (a[2].equals("Expense")) {%>
                 <%
                     if (Double.parseDouble(a[1]) < 0) {
-                        credit += ((-1) * Double.parseDouble(a[1]));
+                        tcredit += ((-1) * Double.parseDouble(a[1]));
                 %>
 
                 <%
                 } else {
-                    debit += Double.parseDouble(a[1]);
+                    tdebit += Double.parseDouble(a[1]);
                 %>
 
                 <%
@@ -213,7 +219,7 @@
                 <tr>
                     <td><span style="margin-left: 20px;">Other Expenses</span></td>
                     <%
-                        tot = debit - credit;
+                        tot = tdebit - tcredit;
                         if (tot < 0) {
                     %>
                     <td></td>
@@ -232,19 +238,21 @@
 
 
                 <%
-                    debit = 0.0;
-                    credit = 0.0;
+                    credit+=tcredit;
+                    debit+=tdebit;
+                    tdebit = 0.0;
+                    tcredit = 0.0;
                     for (String[] a : arr) {
                 %>
                 <%if (!a[2].equals("Expense") && !a[2].equals("Income") && !a[2].equals("Sell") && !a[2].equals("Purchase")) {%>
                 <%
                     if (Double.parseDouble(a[1]) < 0) {
-                        credit += ((-1) * Double.parseDouble(a[1]));
+                        tcredit += ((-1) * Double.parseDouble(a[1]));
                 %>
 
                 <%
                 } else {
-                    debit += Double.parseDouble(a[1]);
+                    tdebit += Double.parseDouble(a[1]);
                 %>
 
                 <%
@@ -256,7 +264,7 @@
                 <tr>
                     <td><span style="margin-left: 20px;">Other</span></td>
                     <%
-                        tot = debit - credit;
+                        tot = tdebit - tcredit;
                         if (tot < 0) {
                     %>
                     <td></td>
