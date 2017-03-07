@@ -168,17 +168,19 @@ public class ReportDAOImpl {
                     if (cbool & dbool) {
                     } else if (!cbool & !dbool) {
                     } else {
-                        double amount = 0.0;
-                        String accountname = "";
-
+                        double amount;
+                        String accountname;
+                        String accountType;
                         if (dbool & dbool) {
                             amount = t1.getPrice();
-                            accountname = t1.getCredit().getName() + "  (" + t1.getCredit().getSubtypeId().getName() + ")";
+                            accountname = t1.getCredit().getName() ;
+                            accountType=t1.getCredit().getSubtypeId().getName();
                         } else {
                             amount = (-1) * t1.getPrice();
-                            accountname = t1.getDebit().getName() + "  (" + t1.getDebit().getSubtypeId().getName() + ")";
+                            accountname = t1.getDebit().getName() ;
+                            accountType=t1.getDebit().getSubtypeId().getName();
                         }
-                        String[] sarr = {st[0], accountname, amount + ""};
+                        String[] sarr = {st[0], accountname, amount + "",accountType};
                         arr.add(sarr);
                     }
                 }
@@ -192,8 +194,9 @@ public class ReportDAOImpl {
                         }
                     }
                     if (finalbool) {
-                        String[] newarr = {starray[1], starray[2]};
+                        String[] newarr = {starray[1], starray[2],starray[3]};
                         finalarr.add(newarr);
+                        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+starray[3]);
                     }
                 }
                 for (String[] starray : finalarr) {

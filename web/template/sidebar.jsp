@@ -96,6 +96,9 @@
                             <%}%>
                             <%if (ca.checkUserAuth("VIEW_BALANCE_SHEET", group) != null) {%>
                             <li><a href="${context}/Report?action=ViewCreateBalanceSheet">Balance Sheet</a></li>
+                            <%if (ca.checkUserAuth("VIEW_PROFIT_LOSS", group) != null) {%>
+                            <li><a href="${context}/Report?action=loadIncomestatementPage">Profit & lost Statement</a></li>
+                            <%}%>
                         <%}%>
                         </ul>
                     </li>
